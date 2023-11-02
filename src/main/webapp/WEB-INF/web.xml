@@ -29,4 +29,14 @@
     <servlet-name>Java</servlet-name>
     <url-pattern>/Java</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>jyanken2</display-name>
+    <servlet-name>jyanken2</servlet-name>
+    <servlet-class>controller.jyanken2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>jyanken2</servlet-name>
+    <url-pattern>/jyanken2</url-pattern>
+  </servlet-mapping>
 </web-app>

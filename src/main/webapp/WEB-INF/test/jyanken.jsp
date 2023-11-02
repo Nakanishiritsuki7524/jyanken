@@ -9,7 +9,7 @@
 <body>
 <h1>ジャンケン</h1>
 
-    <form action="JankenController.jsp" method="post">
+    <form action="JankenController" method="post">
         <label>最初は✊ジャンケン</label>
         <select name="playerChoice">
             <option value="👊">👊</option>
