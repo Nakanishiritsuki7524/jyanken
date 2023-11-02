@@ -7,19 +7,20 @@
 <title>ジャンケン</title>
 </head>
 <body>
-<h1>ジェンケン</h1>
-    
-    <form action="JankenServlet" method="post">
-        <label>選んでください: </label>
+<h1>ジャンケン</h1>
+
+    <form action="JankenController.jsp" method="post">
+        <label>最初は✊ジャンケン</label>
         <select name="playerChoice">
-            <option value="rock">グー</option>
-            <option value="scissors">チョキ</option>
-            <option value="paper">パー</option>
+            <option value="👊">👊</option>
+            <option value="✌️">✌️</option>
+            <option value="✋">✋</option>
         </select>
-        <input type="submit" value="ぽん">
+        
+        <input type="submit" value="ポン">
     </form>
 
-    <h2>結果</h2>
-    <p>${message}</p>
+   <%--  <h2>結果</h2>
+    <p>${message}</p> --%>
 </body>
 </html>
