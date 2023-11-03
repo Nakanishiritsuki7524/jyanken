@@ -9,7 +9,7 @@
 <body>
 <h1>ジャンケン</h1>
 
-    <form action="JankenController" method="post">
+    <form action="Jankencontroller" method="post">
         <label>最初は✊ジャンケン</label>
         <select name="playerChoice">
             <option value="👊">👊</option>
@@ -20,7 +20,6 @@
         <input type="submit" value="ポン">
     </form>
 
-   <%--  <h2>結果</h2>
-    <p>${message}</p> --%>
+  
 </body>
 </html>
