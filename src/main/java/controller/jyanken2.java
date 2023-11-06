@@ -22,14 +22,16 @@ public class jyanken2 extends HttpServlet {
     	   request.setAttribute("pC",playerChoice);
            // CPUの選択をランダムに生成
            String[] choices = {"✋", "✌️", "✊"};
+           //一人目の出す手をランダムにする
            String cpuChoice = choices[(int)(Math.random() * choices.length)];
            request.setAttribute("cC",cpuChoice);
-           
+           //二人目の手をランダムにする
            String cpuChoice2 = choices[(int)(Math.random() * choices.length)];
            request.setAttribute("cC2",cpuChoice2);
           
-           // 勝敗を判定） 一人の場合
+          //nullで値を初期化（”空白”でもいい）
            String result = null ;
+           // 一人の場合
            if (cpucount.equals("1人")) {
         	    if (playerChoice.equals(cpuChoice)) {
         	        result = "引き分け";
@@ -41,11 +43,11 @@ public class jyanken2 extends HttpServlet {
         	        result = "あなたの負け";
         	    }
         	    request.setAttribute("win",result);
-                // confirm.jsp にリダイレクト
+                // 渡したいjspにリダイレクト（処理内容を渡す）
                 String view = "/WEB-INF/test/Jankenresult.jsp";
                 request.getRequestDispatcher(view).forward(request, response);
+                //二人の場合
         	} else if (cpucount.equals("2人")) {
-        	    // 2人用のジャンケンのルール
         	    if ((playerChoice.equals("✊") && cpuChoice.equals("✌️") && cpuChoice2.equals("✌️"))
         	        || (playerChoice.equals("✋") && cpuChoice.equals("✊") && cpuChoice2.equals("✊"))
         	        || (playerChoice.equals("✌️") && cpuChoice.equals("✋") && cpuChoice2.equals("✋"))
@@ -56,7 +58,7 @@ public class jyanken2 extends HttpServlet {
         	        || (playerChoice.equals("✋") && cpuChoice.equals("✊") && cpuChoice2.equals("✋"))
         	        || (playerChoice.equals("✌️") && cpuChoice.equals("✋") && cpuChoice2.equals("✌️"))) {
         	        result = "あなたの勝ち";
-        	    } else if ((playerChoice.equals("✊") && cpuChoice.equals("✊") && cpuChoice2.equals("✊"))
+            } else if ((playerChoice.equals("✊") && cpuChoice.equals("✊") && cpuChoice2.equals("✊"))
         	        || (playerChoice.equals("✊") && cpuChoice.equals("✋") && cpuChoice2.equals("✌️"))
         	        || (playerChoice.equals("✊") && cpuChoice.equals("✌️") && cpuChoice2.equals("✋"))
         	        || (playerChoice.equals("✋") && cpuChoice.equals("✋") && cpuChoice2.equals("✋"))
@@ -69,7 +71,7 @@ public class jyanken2 extends HttpServlet {
         	    } else {
         	        result = "あなたの負け";
         	    }request.setAttribute("win",result);
-                // confirm.jsp にリダイレクト
+                // 渡したいjspにリダイレクト
                 String view = "/WEB-INF/test/Jankenresult2.jsp";
                 request.getRequestDispatcher(view).forward(request, response);
         	}
