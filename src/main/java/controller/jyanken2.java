@@ -29,7 +29,7 @@ public class jyanken2 extends HttpServlet {
            String cpuChoice2 = choices[(int)(Math.random() * choices.length)];
            request.setAttribute("cC2",cpuChoice2);
           
-          //nullで値を初期化（”空白”でもいい）
+          //nullで値を初期化（””でもいい）
            String result = null ;
            // 一人の場合
            if (cpucount.equals("1人")) {
